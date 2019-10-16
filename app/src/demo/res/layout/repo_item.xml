@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="RepoBinding">
+        <variable
+            name="repo"
+            type="com.noname.smatech.model.entities.Repo" />
+    </data>
+
+<android.support.v7.widget.CardView
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="8dp"
+    android:padding="5dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="node_id : "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        />
+
+    <TextView
+        android:id="@+id/repoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/id"
+        android:text="@{repo.node_id}"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        />
+
+    <TextView
+        android:id="@+id/repname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repoid"
+        android:text="name : "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        />
+
+    <TextView
+        android:id="@+id/reponame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/repname"
+        app:layout_constraintTop_toBottomOf="@+id/repoid"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:text="@{repo.full_name}"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        />
+
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reponame"
+        android:text="URL : "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        />
+
+    <TextView
+        android:id="@+id/repourl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/url"
+        app:layout_constraintTop_toBottomOf="@+id/reponame"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:textSize="16sp"
+        android:text="@{repo.url}"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        />
+
+        <TextView
+            android:id="@+id/created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repourl"
+            android:text="create at : "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            />
+
+        <TextView
+            android:id="@+id/createddate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/created"
+            app:layout_constraintTop_toBottomOf="@+id/repourl"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="16sp"
+            android:text="@{repo.created_at}"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            />
+
+        <TextView
+            android:id="@+id/modified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createddate"
+            android:text="modified at : "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            />
+
+        <TextView
+            android:id="@+id/modifieddate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/modified"
+            app:layout_constraintTop_toBottomOf="@+id/createddate"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="16sp"
+            android:text="@{repo.updated_at}"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
+</layout>
